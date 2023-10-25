@@ -1,0 +1,84 @@
+<mvc:View controllerName="ypf.project1.controller.View1"
+xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:layout="sap.ui.layout" 
+xmlns:semantic="sap.f.semantic" 
+xmlns="sap.m" 
+xmlns:u="sap.ui.unified"	
+xmlns:fb="sap.ui.comp.filterbar" 
+xmlns:l="sap.ui.layout" 
+xmlns:html="http://www.w3.org/1999/xhtml">
+
+
+    <Page id="idPage" showNavButton="true" navButtonPress="onBack" title="{i18n>title}"
+		 enableScrolling="true" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer">
+        
+		<Panel width="auto" class="sapUiResponsiveMargin" >
+			<headerToolbar>
+			<OverflowToolbar>
+				<Title text="Costos"/>
+			</OverflowToolbar>
+		</headerToolbar>
+		
+				
+			<Table id="idTable"  items="{ path:'AppJsonModel>/epiList' }"  busyIndicatorDelay="0" 
+				growing="true" growingScrollToLoad="true" width="auto"  growingThreshold="7">
+				<infoToolbar>
+					<OverflowToolbar id="Overflow">
+						<Label id="idLabelRegistros"/>
+					</OverflowToolbar>
+				</infoToolbar>
+				<columns>
+					<Column demandPopin="true">
+						<Text text="{i18n>Material}"/>
+					</Column>
+                    <Column demandPopin="true">
+						<Text text="{i18n>Centro}"/>
+					</Column>
+                    <Column demandPopin="true">
+						<Text text="{i18n>Precio_Contable2}"/>
+					</Column>  
+					<Column demandPopin="true">
+						<Text text="{i18n>Precio_Fiscal2}"/>
+					</Column>    
+                			
+					<Column demandPopin="true">
+						<Text text="{i18n>Precio_Plan1}"/>
+					</Column>
+					<Column demandPopin="true">
+						<Text text="{i18n>Fecha_PrecioPlan1}"/>
+					</Column>
+					<Column demandPopin="true">
+						<Text text="{i18n>Precio_Plan2}"/>
+					</Column>
+						<Column demandPopin="true">
+						<Text text="{i18n>Fecha_PrecioPlan2}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{AppJsonModel>Material}"/>
+							<Text text="{AppJsonModel>Centro}"/>
+							<Text text="{AppJsonModel>Precio_Contable_2}"/>	
+							<Text text="{AppJsonModel>Precio_Fiscal_2}"/>																	
+                            <Text text="{AppJsonModel>Precio_Plan_1}"/>
+							<Text text="{AppJsonModel>Fecha_PrecioPlan_1}"/>
+							<Text text="{AppJsonModel>Precio_Plan_2}"/>
+							<Text text="{AppJsonModel>Fecha_PrecioPlan_2}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>			
+		</Panel>
+		<footer>
+			<OverflowToolbar id="Over">
+				<ToolbarSpacer/>
+				<u:FileUploader id="fileUploader" name="myFileUpload" buttonOnly="true" change="onUploadFile" buttonText="{i18n>upload}"
+					icon="sap-icon://upload"/>
+				<Button id="BTN1" text="{i18n>guardar}" icon="sap-icon://save" press="onGuardar"/>
+				<Button id="BTN2" text="{i18n>ir}" icon="sap-icon://save" press="oNav"/>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

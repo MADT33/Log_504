@@ -1,0 +1,35 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:mvc="sap.ui.core.mvc" >
+   <Dialog
+      id="helloDialog"
+      title="Log">
+	
+	  <Table id="id-table" fixedLayout="true" growing="true"  growingThreshold="7" items="{LogModel>/}" >
+		<columns>
+			<Column>
+				<Label text="{i18n>Material}"/>
+			</Column>
+			<Column>
+				<Label text="{i18n>Mensaje}"/>
+			</Column>
+			
+		</columns>
+		<items>
+			<ColumnListItem type="Active">
+				<cells>
+					<Text text="{LogModel>Material}"/>
+					<Text text="{LogModel>Mensaje}"/>
+
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<HBox id="hb2" alignItems="End" width="auto" justifyContent="End" height="auto" alignContent="End" direction="Row" >				
+	
+	<Button id="BTN" text="Cerrar"  type="Emphasized" press="CerrarDialogo" class="sapUiMediumMarginEnd"></Button>
+	
+	</HBox>
+   </Dialog>
+</core:FragmentDefinition>

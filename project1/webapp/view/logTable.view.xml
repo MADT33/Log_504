@@ -1,0 +1,75 @@
+<mvc:View controllerName="ypf.project1.controller.logTable"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:form="sap.ui.comp.smartform"
+    xmlns:sf="sap.ui.comp.smartfield"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+
+ <Page id="idPage2" showNavButton="true" navButtonPress="onBack" title="{i18n>titlePage2}"
+		 enableScrolling="true" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer">
+		 <headerContent>
+				<SearchField id="SF" width="10rem"  placeholder="Material" search="onSearch" class="sapUiSmallMargin"/>
+		</headerContent>
+
+  <IconTabBar
+		id="idIconTabBar"
+		select="onFilterSelect"
+		class="sapUiResponsiveContentPadding">
+			
+		<items>		
+			<IconTabFilter
+				icon="sap-icon://message-success"
+				iconColor="Positive"
+				count="{/ProductCollectionStats/Counts/Weight/Ok}"
+				text="Ok"
+				key="S" />
+			<IconTabFilter
+				icon="sap-icon://alert"
+				iconColor="Critical"
+				count="{/ProductCollectionStats/Counts/Weight/Heavy}"
+				text="Warning"
+				key="W" />
+			<IconTabFilter
+				icon="sap-icon://status-error"
+				iconColor="Negative"
+				count="{/ProductCollectionStats/Counts/Weight/Overweight}"
+				text="Error"
+				key="E" />   
+
+		</items>   
+		
+            
+		<content>
+       <Table id="id-table" fixedLayout="true" growing="true"  growingThreshold="7" items="{ModelPruebas>/}" >
+		<columns>
+			<Column>
+				<Label text="{i18n>Material}"/>
+			</Column>
+			<Column>
+				<Label text="{i18n>Mensaje}"/>
+			</Column>
+            <Column>
+				<Label text="{i18n>Status}"/>
+			</Column>
+			
+		</columns>
+		<items>
+			<ColumnListItem type="Active">
+				<cells>
+					<Text text="{ModelPruebas>Material}"/>
+					<Text text="{ModelPruebas>Mensaje}"/>
+					<ObjectStatus text="{ModelPruebas>Status}" state="{path:'ModelPruebas>Status' , formatter: '.formatter.formatterColor'}"/>
+              
+
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	
+    
+
+    	</content>
+		
+	</IconTabBar>
+       </Page>
+</mvc:View>
