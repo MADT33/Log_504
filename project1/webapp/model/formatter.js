@@ -6,23 +6,20 @@ sap.ui.define([], function () {
 			var state;
 			switch (Estado) {
 			case "S":
-				state = "Success";
-				break;			
+				state = "Success";				
+				break;
 			case "W":
-				state = "Warning";
+				state = "Warning";				
 				break;
 			case "E":
 				state = "Error";
 				break;
-
 			default:
 				break;
 			}
 			return state;
-		},
-		formatterIcon:function(){
-			
 		}
+		
 
 	};
 });

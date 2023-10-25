@@ -91,8 +91,8 @@ sap.ui.define([
             oNav: function (jsonModel) {
 
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                oRouter.navTo("logTable" , { parameter:  JSON.stringify(jsonModel.oData)});
-
+                //oRouter.navTo("logTable" , { parameter:  JSON.stringify(jsonModel.oData)});
+                oRouter.navTo("logTable" , { parameter:  "0"});
 
             },
 

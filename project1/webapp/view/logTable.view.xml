@@ -41,6 +41,7 @@
             
 		<content>
        <Table id="id-table" fixedLayout="true" growing="true"  growingThreshold="7" items="{ModelPruebas>/}" >
+	   
 		<columns>
 			<Column>
 				<Label text="{i18n>Material}"/>
@@ -57,8 +58,8 @@
 			<ColumnListItem type="Active">
 				<cells>
 					<Text text="{ModelPruebas>Material}"/>
-					<Text text="{ModelPruebas>Mensaje}"/>
-					<ObjectStatus text="{ModelPruebas>Status}" state="{path:'ModelPruebas>Status' , formatter: '.formatter.formatterColor'}"/>
+					<Text text="{ModelPruebas>Mensaje}"/>					
+					<ObjectStatus  icon="sap-icon://project-definition-triangle-2" state="{path:'ModelPruebas>Status' , formatter: '.formatter.formatterColor'}"/>
               
 
 				</cells>

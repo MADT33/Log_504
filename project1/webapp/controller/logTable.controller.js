@@ -4,11 +4,13 @@ sap.ui.define(
     "sap/ui/core/routing/History",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
+    "../model/formatter"
   ],
-  function (BaseController, History, Filter, FilterOperator) {
+  function (BaseController, History, Filter, FilterOperator, formatter) {
     "use strict";
 
     return BaseController.extend("ypf.project1.controller.logTable", {
+      formatter: formatter,
       onInit() {
 
         var oDatosProveedores = {
